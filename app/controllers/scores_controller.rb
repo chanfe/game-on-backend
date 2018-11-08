@@ -38,7 +38,7 @@ class ScoresController < ApplicationController
 
   private
   def strong_params
-    params.permit(:id, :user_id, :points)
+    params.require(:score).permit(:id, :user_id, :points)
   end
 
 end
