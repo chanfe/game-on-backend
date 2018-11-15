@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :scores
-  validates :name, :username, :password, presence: true
+  validates :name, :username, presence: true
   validates :username, uniqueness: true
   has_secure_password
 

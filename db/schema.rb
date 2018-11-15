@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_002127) do
   create_table "scores", force: :cascade do |t|
     t.integer "points"
     t.integer "user_id"
+    t.integer "scoreTable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,10 +40,15 @@ ActiveRecord::Schema.define(version: 2018_11_07_002127) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
+    t.boolean "first_ending"
+    t.boolean "second_ending"
+    t.boolean "secret_place"
+    t.boolean "secret_login"
+    t.boolean "max_score_v1"
+    t.boolean "max_score_v2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
   add_foreign_key "messages", "conversations"

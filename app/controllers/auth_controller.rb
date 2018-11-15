@@ -17,7 +17,7 @@ class AuthController < ApplicationController
     @user = User.find_by(id: decoded[0]["id"])
 
     if @user
-      render json: {username: @user.username, id: @user.id }
+      render json: {username: @user.username, id: @user.id}
     else
       render json: {error: 'Invalid token'}, status: 401
     end

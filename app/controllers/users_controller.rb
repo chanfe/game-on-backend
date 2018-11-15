@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(strong_params)
+    byebug
     if @user.valid?
       render json: { user: UserSerializer.new(@user) , jwt: @token}, status: :created
     else
@@ -41,6 +42,7 @@ class UsersController < ApplicationController
 
   private
   def strong_params
-    params.require(:user).permit(:id, :name, :username, :password)
+    params.require(:user).permit(:id, :name, :username, :password, :first_ending, :second_ending, :secret_place, :secret_login, :max_score_v1, :max_score_v2)
+
   end
 end

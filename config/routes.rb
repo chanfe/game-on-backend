@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
   get '/users', to: 'users#index'
   post '/users', to: 'users#create'
+  put '/users/:id', to:'users#update'
 
   get '/scores', to: 'scores#index'
   post '/scores', to: 'scores#create'

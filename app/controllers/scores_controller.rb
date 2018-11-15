@@ -6,7 +6,6 @@ class ScoresController < ApplicationController
   end
 
   def show
-    buybug
     @score = Score.find(params[:id])
     render json: @score
   end
@@ -38,7 +37,7 @@ class ScoresController < ApplicationController
 
   private
   def strong_params
-    params.require(:score).permit(:id, :user_id, :points)
+    params.require(:score).permit(:id, :user_id, :points, :scoreTable_id)
   end
 
 end

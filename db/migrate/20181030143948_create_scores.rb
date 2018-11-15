@@ -4,6 +4,7 @@ class CreateScores < ActiveRecord::Migration[5.2]
 
       t.integer :points
       t.integer :user_id
+      t.integer :scoreTable_id
 
       t.timestamps
     end
