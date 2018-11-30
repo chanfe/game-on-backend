@@ -14,8 +14,10 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  config.action_cable.url = 'wss://game-on-backend.herokuapp.com/cable'
+
   config.web_socket_server_url = "wss://game-on-backend.herokuapp.com/cable"
-  config.action_cable.allowed_request_origins = ['https://game-on-backend.herokuapp.com', 'http://game-on-backend.herokuapp.com']
+  config.action_cable.allowed_request_origins = ['https://game-on-backend.herokuapp.com', '/http:\/\/game-on-backend.herokuapp.com.*/']
 
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
