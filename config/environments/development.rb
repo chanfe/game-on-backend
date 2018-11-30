@@ -35,6 +35,10 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  config.web_socket_server_url = "wss://game-on-backend.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://game-on-backend.herokuapp.com', 'http://game-on-backend.herokuapp.com']
+
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
