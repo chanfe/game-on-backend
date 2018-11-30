@@ -18,6 +18,12 @@ Rails.application.configure do
     'Cache-Control' => "public, max-age=#{1.hour.to_i}"
   }
 
+  config.action_cable.url = 'wss://game-on-backend.herokuapp.com/cable'
+
+  config.web_socket_server_url = "wss://game-on-backend.herokuapp.com/cable"
+  config.action_cable.allowed_request_origins = ['https://game-on-backend.herokuapp.com', '/http:\/\/game-on-backend.herokuapp.com.*/']
+
+
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
